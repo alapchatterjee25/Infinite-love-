@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Infinite Love 💖</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,34 +16,20 @@
 }
 
 body{
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
     background:linear-gradient(135deg,#ffd6e7,#ff6fa5);
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    position:relative;
-}
-
-/* Floating Hearts */
-.heart{
-    position:fixed;
-    bottom:-50px;
-    animation:floatUp linear infinite;
-    opacity:0;
-}
-
-@keyframes floatUp{
-    0%{transform:translateY(0) scale(1);opacity:0;}
-    10%{opacity:1;}
-    100%{transform:translateY(-110vh) scale(1.3);opacity:0;}
+    padding:20px;
+    overflow-x:hidden;
 }
 
 /* Main Content */
 .container{
-    z-index:10;
-    max-width:90%;
+    max-width:600px;
+    width:100%;
 }
 
 .bear{
@@ -54,149 +39,86 @@ body{
 
 @keyframes bounce{
     0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
+    50%{transform:translateY(-12px);}
 }
 
 h1{
     font-family:'Dancing Script',cursive;
-    font-size:2.5rem;
+    font-size:2rem;
     margin-top:10px;
 }
 
-.subtitle{
-    margin:15px 0;
-    font-style:italic;
+.subtitle, .closing{
+    margin:12px 0;
 }
 
-.closing{
-    margin-top:15px;
-    font-weight:600;
-}
-
-/* Floating Question Text */
-.floating-text{
-    font-family:'Dancing Script', cursive;
-    font-size:2.3rem;
+/* Question */
+.question{
+    font-family:'Dancing Script',cursive;
+    font-size:1.8rem;
     margin-top:20px;
-}
-
-.floating-text span{
-    display:inline-block;
-    animation: float 3s ease-in-out infinite;
-}
-
-.floating-text span:nth-child(odd){
-    animation-delay:0.3s;
-}
-
-@keyframes float{
-    0%,100%{ transform:translateY(0); }
-    50%{ transform:translateY(-10px); }
 }
 
 /* Buttons */
 .buttons{
-    margin-top:30px;
+    margin-top:25px;
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:40px;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:12px 25px;
+    font-size:1rem;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
 }
 
 #yesBtn{
-    padding:15px 40px;
-    font-size:1.2rem;
-    border:none;
-    border-radius:50px;
     background:linear-gradient(45deg,#ff1744,#ff6f91);
     color:white;
-    cursor:pointer;
-    transition:0.3s;
     box-shadow:0 0 15px rgba(255,0,80,0.6);
 }
 
-#yesBtn:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 25px rgba(255,0,80,0.9);
-}
-
 #noBtn{
-    padding:10px 25px;
-    font-size:1rem;
-    border-radius:50px;
-    border:2px solid red;
     background:white;
     color:red;
-    cursor:pointer;
+    border:2px solid red;
     position:relative;
 }
 
-/* Celebration Screen */
+/* Celebration */
 .celebration{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:linear-gradient(135deg,#ffd6e7,#ff6fa5);
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    z-index:50;
+    padding:20px;
 }
 
 .yay{
-    font-size:4rem;
-    font-weight:700;
+    font-size:2.5rem;
+    font-weight:bold;
     animation:pulse 1s infinite;
 }
 
 @keyframes pulse{
     0%,100%{transform:scale(1);}
-    50%{transform:scale(1.2);}
+    50%{transform:scale(1.1);}
 }
 
-.spin{
-    font-size:60px;
-    animation:spin 2s linear infinite;
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-
-/* Love Text Glow */
 .love-text{
-    margin-top:20px;
-    font-size:2rem;
+    margin-top:15px;
+    font-size:1.5rem;
     font-weight:700;
     color:white;
     text-shadow:0 0 15px #ff1493, 0 0 25px #ff69b4;
-    animation:pulseLove 1.5s infinite;
-}
-
-@keyframes pulseLove{
-    0%,100%{ transform:scale(1); }
-    50%{ transform:scale(1.1); }
-}
-
-/* Confetti */
-.confetti{
-    position:fixed;
-    width:8px;
-    height:12px;
-    top:-20px;
-    animation:fall 3s linear forwards;
-}
-
-@keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:0;
-    }
 }
 </style>
 </head>
@@ -204,85 +126,56 @@ h1{
 <body>
 
 <div class="container" id="mainContent">
+
     <div class="bear">🐻</div>
 
     <h1>Almost Two Years With You… And I Still Choose You Every Day Bubbu 💖</h1>
 
     <div class="subtitle">
-        I may not be perfect... but I promise to keep growing into the man you deserve!🫠
+        I may not be perfect... but I promise to keep growing into the man you deserve! 🫠
     </div>
 
     <div class="closing">
-        You’re not just my love... you’re the partner I always dreamed my future would hold!😌💗
+        You’re not just my love... you’re the partner I always dreamed my future would hold! 😌💗
     </div>
 
     <div class="closing">
-        Let’s grow, learn, fight, laugh, and build our forever together!🫂💝
+        Let’s grow, learn, fight, laugh, and build our forever together! 🫂💝
     </div>
 
-    <h1 class="floating-text">
-        <span>Will</span>
-        <span>you</span>
-        <span>stay</span>
-        <span>by</span>
-        <span>my</span>
-        <span>side</span>
-        <span>and</span>
-        <span>turn</span>
-        <span>our</span>
-        <span>love</span>
-        <span>story</span>
-        <span>into</span>
-        <span>forever?</span>
-    </h1>
+    <div class="question">
+        Will you stay by my side and turn our love story into forever?
+    </div>
 
     <div class="buttons">
         <button id="yesBtn">Yes 💖</button>
-        <button id="noBtn">No</button>
+        <button id="noBtn">No 😅</button>
     </div>
+
 </div>
 
 <script>
 
-// Floating Hearts
-let hearts = [];
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "💕";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.fontSize = (20 + Math.random()*30) + "px";
-    heart.style.animationDuration = (4 + Math.random()*4) + "s";
-    document.body.appendChild(heart);
-    hearts.push(heart);
-}
-for(let i=0;i<15;i++){ createHeart(); }
-
-// Buttons
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 
 const messages = [
-"Nope, not an option!😒",
-"Try again!🙄",
-"You sure about that?👀",
-"Not happening!😤",
-"Think again!🙄"
+"Nope 😒",
+"Think again 👀",
+"Not happening 😤",
+"Try once more 🙄",
+"Are you sure? 😏"
 ];
+
 let msgIndex = 0;
 
-function moveNoButton(){
-    const yesRect = yesBtn.getBoundingClientRect();
-    let x,y;
-    do{
-        x = Math.random() * (window.innerWidth - 120);
-        y = Math.random() * (window.innerHeight - 60);
-    } while(
-        x > yesRect.left - 120 &&
-        x < yesRect.right + 120 &&
-        y > yesRect.top - 60 &&
-        y < yesRect.bottom + 60
-    );
+// MOBILE SAFE MOVE
+function moveNo(){
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
     noBtn.style.position = "fixed";
     noBtn.style.left = x + "px";
@@ -292,38 +185,26 @@ function moveNoButton(){
     msgIndex = (msgIndex + 1) % messages.length;
 }
 
-noBtn.addEventListener("mouseenter", moveNoButton);
-noBtn.addEventListener("click", moveNoButton);
-noBtn.addEventListener("touchstart", moveNoButton);
+noBtn.addEventListener("click", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
 
-// YES CLICK
 yesBtn.addEventListener("click", () => {
 
     document.getElementById("mainContent").style.display="none";
-    hearts.forEach(h=>h.remove());
 
     const celebration = document.createElement("div");
     celebration.classList.add("celebration");
 
     celebration.innerHTML = `
-        <div class="yay">INFINITE LOVE (amader modhe)♾️</div>
-        <div class="spin">💝</div>
-        <div class="love-text">I LOVE YOU INFINITE MY BUBBU!!!🫂</div>
-        <div style="margin-top:15px;font-size:1.1rem;">Forever Starts Now💗</div>
+        <div class="yay">INFINITE LOVE (amader modhe) ♾️</div>
+        <div style="font-size:50px;margin:10px;">💝</div>
+        <div class="love-text">I LOVE YOU INFINITE MY BUBBU!!! 🫂</div>
+        <div style="margin-top:10px;">Forever Starts Now 💗</div>
     `;
 
     document.body.appendChild(celebration);
-
-    for(let i=0;i<120;i++){
-        const conf = document.createElement("div");
-        conf.classList.add("confetti");
-        conf.style.left = Math.random()*100 + "vw";
-        conf.style.backgroundColor =
-            "hsl(" + Math.random()*360 + ",100%,50%)";
-        conf.style.animationDuration = (2 + Math.random()*3) + "s";
-        document.body.appendChild(conf);
-    }
 });
+
 </script>
 
 </body>
